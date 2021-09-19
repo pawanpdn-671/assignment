@@ -22,23 +22,30 @@ function requestMovies(url, onComplete, onError) {
 function searchMovie(value) {
     const path = '/search/movie';
     const url = generateURL(path) + '&query=' + value;
+
     requestMovies(url, renderSearchMovies, handleError);
 }
 
 function getUpcomingMovies() {
     const path = '/movie/upcoming';
     const url = generateURL(path);
-    requestMovies(url, renderMovies, handleError);
+
+    const render = renderMovies.bind({ title: 'Upcoming Movies'})
+    requestMovies(url, render, handleError);
 }
 
 function getTopRateMovies() {
     const path = '/movie/top_rated';
     const url = generateURL(path);
-    requestMovies(url, renderMovies, handleError);
+
+    const render = renderMovies.bind({ title: 'Top-Rated Movies'});
+    requestMovies(url, render, handleError);
 }
 
 function getPopularMovies() {
     const path = '/movie/popular';
     const url = generateURL(path);
-    requestMovies(url, renderMovies, handleError);
+
+    const render = renderMovies.bind({ title: 'Popular Movies'});
+    requestMovies(url, render, handleError);
 }

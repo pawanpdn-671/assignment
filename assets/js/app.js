@@ -21,62 +21,63 @@ searchBtn.addEventListener('click', (e) => {
 
 function renderSearchMovies(data){
     searchedOutput.innerHTML = '';
+    const title = 'Search Results';
 
-    const getMoviesList = createMovieContainer(data.results);
+    const getMoviesList = createMovieContainer(data.results, title);
     searchedOutput.appendChild(getMoviesList);
 }
 
 function getMovieDetail(movies) {
-    return movies.map((movie) => {
+    const section = document.createElement('section');
+    section.classList = 'section';
+
+    movies.map((movie) => {
         
         if (movie.poster_path) {
-            return `
-                <img src=${IMAGE_url + movie.poster_path} data-movie-id=${movie.id} class="searched-poster"/>
-            `;
+            const img = document.createElement('img');
+            img.src = IMAGE_url + movie.poster_path; 
+            img.setAttribute('data-movie-id', movie.id);
+
+            section.appendChild(img);
         }
 
     })
+    return section;
 }
 
 function renderMovies(data) {
     const movies = data.results;
-    const getMoviesList = createMovieContainer(movies);
+    const getMoviesList = createMovieContainer(movies, this.title);
     getMovieContainer.appendChild(getMoviesList);
 }
 
-function createMovieContainer(movies) {
+function createMovieContainer(movies, title) {
 
     const movieElement = document.createElement('div');
     movieElement.setAttribute('class', 'movie');
 
-    const movieTemplate = `
-        <section class="movieSection">
-            ${getMovieDetail(movies)}
-        </section>
+    const heading = document.createElement('h3');
+    heading.innerHTML = title;
 
-        <div class="content">
-            <p id="content-close">CLOSE</p>
-        </div>
-    `
+    const content = document.createElement('div');
+    content.classList = 'content';
 
-    movieElement.innerHTML = movieTemplate;
+    const contentClose = '<p id="content-close">Close</p>'
+    content.innerHTML = contentClose;
+
+    const section = getMovieDetail(movies);
+
+    movieElement.appendChild(heading);
+    movieElement.appendChild(section);
+    movieElement.appendChild(content);
+
     return movieElement;
 
 }
 
-function createIframe(video) {
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${video.key}`;
-    iframe.width = 300;
-    iframe.height = 200;
-    iframe.allowFullscreen = true;
-
-    return iframe;
-}
-
 function createVideoTemplate(data, content) {
     console.log(data);
-    content.innerHTML = '<p id="content-close">close<p>';
+    content.innerHTML = '<p id="content-close">Close</p>';
     const videos = data.results;
     const length = videos.length > 4 ? 4 : videos.length;
     const iframeContainer = document.createElement('div');
@@ -90,6 +91,14 @@ function createVideoTemplate(data, content) {
     }    
 }
 
+function createIframe(video) {
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${video.key}`;
+    iframe.allowFullscreen = true;
+
+    return iframe;
+}
+
 function handleError(error) {
     console.log('Error:', error);
 }
@@ -99,8 +108,7 @@ function handleError(error) {
 document.onclick = function(event) {
     const target = event.target;
     
-    if(target.className.toLowerCase() === 'searched-poster') {
-        console.log("success");
+    if(target.tagName.toLowerCase() === 'img') {
         const movieID = event.target.dataset.movieId;
         console.log(movieID);
 
@@ -128,3 +136,4 @@ document.onclick = function(event) {
 
 getUpcomingMovies();
 getTopRateMovies();
+getPopularMovies();

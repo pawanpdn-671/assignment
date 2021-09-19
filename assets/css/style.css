@@ -12,7 +12,7 @@ html{
 body{
     font-family: 'Roboto', sans-serif;
     width: 100%;
-    background-color: rgb(4, 59, 71);
+    background-color: rgb(8, 58, 61);
 }
 ::-webkit-scrollbar{
     display: none;
@@ -98,7 +98,7 @@ body{
     font-size: 1.8rem;
 }
 .profile-box .profile-text-container{
-    margin: 0 1.2rem;
+    margin: 0 1rem;
 }
 .profile-text-container .profile-text{
     color: white;
@@ -139,59 +139,88 @@ body{
 /* SEARCHED - MOVIE - LIST - BLOCK  */
 
 #searchedResultBox{
-    padding: 1rem;
     margin: 5rem auto 0 auto;
     width: 90%;
 }
-#searchedResultBox .movie{
+#searchedResultBox img{
+    width: 20%;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 1rem;
+    border-radius: 0.5rem;
+}
+#searchedResultBox img:hover{
+    transform: scale(1.1);
+}
+
+/* FOR BOTH SEARCHED MOVIE AND DEFAULT MOVIES */
+.movie{
     width: 100%;
     margin-top: 2rem;
 }
-.movie .movieSection{
+.movie .section{
     width: 100%;
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+    /* border: 1px solid cyan; */
+    padding: 3rem 2rem;
 }
-
-#searchedResultBox img{
-    width: 20%;
-    transition: all 0.4s ease-in;
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 1rem;
-    border-radius: 0.35rem;
+.movie h3{
+    color: rgb(230, 235, 232);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-left: 3rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.3rem solid rgb(159, 194, 32);
 }
-#searchedResultBox img:hover{
-    transform: scale(1.15);
-}
-
 .content{
     display: none;
-    border: 1px solid green;
-
+    padding: 1rem 3rem;
+    width: 100%;
 }
 .content p{
     color: white;
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.3rem 1rem;
+    background: red;
+    cursor: pointer;
+    border-radius: 0.2rem;
 }
 .content-display{
     display: block;
-    border: 1px solid cyan;
 }
-
+.movie .movieClips{
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+.movie .movieClips iframe{
+    margin-right: 2rem;
+    width: 20rem;
+    height: 12rem;
+}
 /* DEFAULT - MOVIES - LIST  */
 
 .movie-container {
     width: 90%;
     margin: 2rem auto 0 auto;
 }
-.movie-container .movie{
-    padding: 1rem;
-    width: 100%;
-}
 .movie .movieSection{
     width: 100%;
 }
 .movie-container img {
     width: 20%;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 1rem;
+    border-radius: 0.5rem;
+}
+.movie-container img:hover{
+    transform: scale(1.1);
 }
