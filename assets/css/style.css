@@ -51,25 +51,24 @@ body{
     justify-content: center;
 }
 .search-box .search-wrapper{
+    display: flex;
     height: 2.5rem;
     width: 50%;
-    position: relative;
 }
 .search-wrapper .search-field{
-    width: 100%;
+    width: 90%;
     height: 100%;
-    border-radius: 1.5rem;
     outline: none;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
     padding-left: 1rem;
     font-size: 1.2rem;
     color:rgb(3, 50, 65);
+    border: none;
 }
 .search-wrapper .search-btn-container{
-    position: absolute;
-    top: 4%;
-    right: 0;
-    height: 2.3rem;
-    width: 2.4rem;
+    width: 10%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,5 +261,11 @@ body{
     }
     .movie-container img{
         width: 40%;
+    }
+    .search-wrapper .search-field{
+        width: 88%;
+    }
+    .search-wrapper .search-btn-container{
+        width: 12%;
     }
 }
