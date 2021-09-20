@@ -134,6 +134,7 @@ document.onclick = function(event) {
     }
 }
 
+
 getUpcomingMovies();
 getTopRateMovies();
 getPopularMovies();

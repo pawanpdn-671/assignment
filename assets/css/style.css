@@ -12,7 +12,7 @@ html{
 body{
     font-family: 'Roboto', sans-serif;
     width: 100%;
-    background-color: rgb(8, 58, 61);
+    background-color: rgb(6, 48, 53);
 }
 ::-webkit-scrollbar{
     display: none;
@@ -25,6 +25,7 @@ body{
 }
 #navbar .nav-items-container{
     display: flex;
+    justify-content: flex-start;
 }
 .nav-items-container .logo-box{
     flex-basis: 20%;
@@ -87,54 +88,6 @@ body{
     color: rgb(3, 50, 65);
 }
 
-.nav-items-container .profile-box{
-    flex-basis: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-.profile-box .img{
-    color: rgb(209, 209, 209);
-    font-size: 1.8rem;
-}
-.profile-box .profile-text-container{
-    margin: 0 1rem;
-}
-.profile-text-container .profile-text{
-    color: white;
-    font-size: 0.9rem;
-}
-.profile-text-container i{
-    color: white;
-    font-size: 0.9rem;
-}
-
-.toggle{
-    width: 3rem;
-    height: 1.4rem;
-    background-color: white;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-}
-.toggle .night{
-    color: rgb(4, 50, 53);
-}
-.toggle .day{
-    color: goldenrod;
-}
-.toggle-ball{
-    width: 1.5rem;
-    height: 1.4rem;
-    background-color: rgb(4, 50, 53);
-    position: absolute;
-    right: 0;
-    border-radius: 1rem;
-    border: 1px solid white;
-    cursor: pointer;
-}
 
 /* SEARCHED - MOVIE - LIST - BLOCK  */
 
@@ -174,7 +127,7 @@ body{
     font-size: 1.8rem;
     margin-left: 3rem;
     padding-bottom: 0.2rem;
-    border-bottom: 0.3rem solid rgb(159, 194, 32);
+    border-bottom: 0.3rem solid rgb(9, 162, 179);
 }
 .content{
     display: none;
