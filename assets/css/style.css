@@ -190,7 +190,7 @@ body{
     /* border: 1px solid red; */
     z-index: 10;
     width: 10%;
-    height: 20%;
+    height: 18%;
     display: flex;
 }
 .ad-block .ad{
@@ -198,7 +198,6 @@ body{
     height: 80%;
     align-self: flex-end;
     justify-self: flex-start;
-    box-shadow: 0 0 1rem 0 rgb(107, 104, 104);
     border-radius: 1rem;
 }
 .ad img{
@@ -231,6 +230,10 @@ span#closeAd{
     }
     .movie-container img{
         width: 30%;
+    }
+    .ad-block{
+        height: 15%;
+        width: 11%;
     }
 }
 
@@ -276,6 +279,10 @@ span#closeAd{
         width: 15rem;
         height: 10rem;
     }
+    .ad-block{
+        height: 12%;
+        width: 15%;
+    }
 }
 
 @media (max-width: 500px){
@@ -299,5 +306,9 @@ span#closeAd{
     }
     .search-wrapper .search-btn-container{
         width: 12%;
+    }
+    .ad-block{
+        height: 10%;
+        width: 18%;
     }
 }

@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
                 let response = xhr.responseURL;
                 adBox.innerHTML = `<img src=${response} />`;
                 closeBtn.style.display="inline-block";
+                adBox.style.boxShadow="0 0 1rem 0 rgb(107, 104, 104)";
             }
         }
         xhr.send();
