@@ -181,6 +181,38 @@ body{
     transform: scale(1.1);
 }
 
+/* ADS BLOCK */
+
+.ad-block{
+    position: fixed;
+    bottom: 5%;
+    left: 2%;
+    /* border: 1px solid red; */
+    z-index: 10;
+    width: 10%;
+    height: 20%;
+    display: flex;
+}
+.ad-block .ad{
+    width: 90%;
+    height: 80%;
+    align-self: flex-end;
+    justify-self: flex-start;
+    box-shadow: 0 0 1rem 0 rgb(107, 104, 104);
+    border-radius: 1rem;
+}
+.ad img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+span#closeAd{
+    align-self: flex-start;
+    display: none;
+    cursor: pointer;
+}
+
+
 /* #######RESPONSIVE######### */
 
 @media (max-width: 1100px) {
